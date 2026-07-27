@@ -1,181 +1,83 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>강서 클럽 정보 - 리얼 상세 가이드 | 강서구 클럽 총정리</title>
-    <meta name="description" content="야! 강서구 클럽 완벽 정보. 입장료, 위치, 분위기, 음악 장르까지 다 까발림. 진짜 가보고 쓰는 리뷰. 클럽 고민 끝! 전화 010-6279-0862">
-    <meta name="keywords" content="강서 클럽, 강서구 클럽 추천, 강서 클럽 정보, 클럽 입장료, 강서구 클럽 분위기, 홍대 클럽, 클럽 가격">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-acid-yellow">
-    <link rel="canonical" href="https://t3b06-gs-club-cmp.vercel.app/info">
-    <meta property="og:title" content="강서 클럽 정보 - 입장료, 위치, 분위기 싹 다 공개">
-    <meta property="og:description" content="야! 강서구 클럽 완벽 정보. 입장료, 위치, 분위기, 음악 장르까지 다 까발림. 진짜 가보고 쓰는 리뷰.">
-    <meta property="og:image" content="https://t3b06-gs-club-cmp.vercel.app/og-info.jpg">
-    <meta property="og:url" content="https://t3b06-gs-club-cmp.vercel.app/info">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        /* RESET & BASE */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Courier New', Courier, monospace; background: #1a1a1a; color: #e0e0e0; line-height: 1.6; }
-        img { max-width: 100%; height: auto; display: block; }
-        a { color: #f7e05e; text-decoration: none; border-bottom: 2px solid #f7e05e; }
-        a:hover { color: #1a1a1a; background: #f7e05e; }
-        /* TYPOGRAPHY */
-        h1 { font-size: 3.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; line-height: 1; color: #f7e05e; text-shadow: 4px 4px 0 #000; margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; border-left: 8px solid #f7e05e; padding-left: 1rem; margin: 2rem 0 1rem; }
-        h3 { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; }
-        p, li { font-size: 1.125rem; margin-bottom: 0.75rem; }
-        .btn { display: inline-block; background: #f7e05e; color: #1a1a1a; padding: 0.75rem 1.5rem; font-weight: 800; text-transform: uppercase; border: 3px solid #1a1a1a; box-shadow: 6px 6px 0 #000; transition: all 0.15s; cursor: pointer; }
-        .btn:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 #000; background: #fff; }
-        /* LAYOUT */
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        /* HEADER */
-        header { background: #0d0d0d; padding: 1rem 0; border-bottom: 4px solid #f7e05e; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; color: #f7e05e; }
-        .logo span { background: #f7e05e; color: #0d0d0d; padding: 0 0.25rem; }
-        nav ul { list-style: none; display: flex; gap: 2rem; justify-content: flex-end; }
-        nav ul li a { font-weight: 700; text-transform: uppercase; font-size: 0.9rem; border: none; }
-        nav ul li a:hover { background: #f7e05e; color: #0d0d0d; padding: 0.25rem 0.5rem; }
-        /* HAMBURGER MENU (mobile) */
-        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; padding: 5px; }
-        .hamburger span { width: 30px; height: 4px; background: #f7e05e; display: block; }
-        @media (max-width: 768px) {
-            nav ul { display: none; flex-direction: column; background: #0d0d0d; position: absolute; top: 70px; right: 1rem; padding: 1rem; gap: 1rem; border: 2px solid #f7e05e; }
-            nav ul.active { display: flex; }
-            .hamburger { display: flex; }
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-        }
-        /* HERO */
-        .hero { padding: 4rem 0; text-align: center; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); }
-        .hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem; }
-        /* CARDS */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
-        .card { background: #2a2a2a; border: 3px solid #f7e05e; padding: 1.5rem; box-shadow: 8px 8px 0 #000; transition: all 0.2s; }
-        .card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0 #000; }
-        .card h3 { color: #f7e05e; }
-        .card .price-tag { background: #f7e05e; color: #1a1a1a; font-weight: 800; padding: 0.25rem 0.75rem; display: inline-block; margin: 0.5rem 0; }
-        .card ul { list-style: none; margin-top: 1rem; }
-        .card ul li::before { content: '▸ '; color: #f7e05e; font-weight: bold; }
-        /* COMPARISON TABLE */
-        .table-wrap { overflow-x: auto; margin: 2rem 0; }
-        table { width: 100%; border-collapse: collapse; background: #2a2a2a; border: 3px solid #f7e05e; }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #444; }
-        th { background: #f7e05e; color: #1a1a1a; text-transform: uppercase; font-weight: 800; }
-        tr:hover { background: #333; }
-        /* FAQ */
-        .faq { margin: 3rem 0; }
-        .faq-item { border-bottom: 2px solid #f7e05e; padding: 1rem 0; }
-        .faq-item summary { font-size: 1.3rem; font-weight: 700; cursor: pointer; list-style: none; }
-        .faq-item summary::after { content: ' +'; color: #f7e05e; }
-        .faq-item[open] summary::after { content: ' -'; }
-        .faq-item p { margin-top: 0.5rem; }
-        /* FOOTER */
-        footer { background: #0d0d0d; padding: 2rem 0; text-align: center; border-top: 4px solid #f7e05e; margin-top: 4rem; }
-        footer a { border: none; font-weight: 700; }
-        footer a:hover { background: #f7e05e; color: #0d0d0d; padding: 0.25rem 0.5rem; }
-        /* TEL LINK */
-        .tel-link { font-size: 1.5rem; font-weight: 900; color: #f7e05e; display: inline-block; margin: 1rem 0; }
-        .tel-link:hover { background: #f7e05e; color: #0d0d0d; padding: 0 0.25rem; }
-    </style>
+  <meta charset="UTF-8">
+  <title>강서 클럽 비교 — 정보</title>
+  <meta name="description" content="강서 지역 클럽에 대해 깊이 있는 정보를 제공합니다. 위치, 시설, 분위기, 이용 팁 등 초보자와 단골 모두에게 도움이 되는 내용으로 구성했습니다.">
+  <meta name="keywords" content="강서, 클럽, 정보, 상세, 이용 가이드">
+  <link rel="canonical" href="https://gangseo-club-hot.mapo-room-guide.xyz/about.html">
+  <meta property="og:title" content="강서 클럽 비교 — 정보">
+  <meta property="og:description" content="강서 클럽에 대한 상세 정보와 상황별 이용 팁을 제공합니다.">
+  <meta property="og:url" content="https://gangseo-club-hot.mapo-room-guide.xyz/about.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- CSS 파일은 기존 시스템을 그대로 사용합니다 -->
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
-<body>
-    <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-            <div class="logo">강서<span>클럽</span></div>
-            <div class="hamburger" onclick="this.nextElementSibling.classList.toggle('active')">
-                <span></span><span></span><span></span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/info" style="background:#f7e05e; color:#0d0d0d; padding:0.25rem 0.5rem;">정보</a></li>
-                    <li><a href="/compare">비교</a></li>
-                    <li><a href="/reviews">리뷰</a></li>
-                    <li><a href="/contact">연락처</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="t-top-4xc4">
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>강서 클럽<br>완벽 정보</h1>
-                <p>입장료, 위치, 분위기, 음악 장르까지 싹 다 까발린다. 내가 직접 가보고 쓰는 리얼 정보. <br>클럽 고민? 이거 보면 끝.</p>
-                <a href="tel:010-6279-0862" class="tel-link">📞 010-6279-0862</a>
-                <br><br>
-                <a href="#detail" class="btn">👇 정보 보기</a>
-            </div>
-        </section>
+  <!-- 네비게이션 (전체 페이지 공통) -->
+  <nav class="q-side-9p5x">
+    <ul>
+      <li><a href="/index.html">홈</a></li>
+      <li><a href="/compare.html">클럽 비교</a></li>
+      <li><a href="/info.html" aria-current="page">정보</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/contact.html">문의</a></li>
+    </ul>
+    <button class="hamburger-menu" aria-label="메뉴 열기"></button>
+  </nav>
 
-        <section id="detail" class="container" style="margin-top: 2rem;">
-            <h2>⚡ 클럽 상세 정보</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>클럽 A (홍대 스타일)</h3>
-                    <span class="price-tag">💰 입장료: 15,000~20,000원</span>
-                    <ul>
-                        <li><strong>위치:</strong> 강서구 화곡동 중심가, 지하철 5호선 5분</li>
-                        <li><strong>음악:</strong> EDM / 힙합 믹스, 주말엔 라이브</li>
-                        <li><strong>분위기:</strong> 개방적, 넓은 댄스 플로어, 직원들 친절</li>
-                        <li><strong>추천:</strong> 첫 클럽 or 단체로 오기 좋음</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>클럽 B (언더그라운드)</h3>
-                    <span class="price-tag">💰 입장료: 10,000~15,000원</span>
-                    <ul>
-                        <li><strong>위치:</strong> 까치산역 근처, 골목 안에 숨은 곳</li>
-                        <li><strong>음악:</strong> 인디 / 테크노, 로컬 DJ 자주</li>
-                        <li><strong>분위기:</strong> 어둡고 시크, 힙한 인테리어, 좀 좁음</li>
-                        <li><strong>추천:</strong> 색다른 분위기 원하는 사람</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>클럽 C (프리미엄)</h3>
-                    <span class="price-tag">💰 입장료: 25,000~35,000원</span>
-                    <ul>
-                        <li><strong>위치:</strong> 발산역 롯데몰 근처</li>
-                        <li><strong>음악:</strong> 힙합 / 텐션곡 위주, 유명 DJ 초청</li>
-                        <li><strong>분위기:</strong> 깔끔하고 고급짐, VIP존 있음</li>
-                        <li><strong>추천:</strong> 데이트 or 특별한 날</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+  <!-- 메인 카드 -->
+  <section class="m-card-qdtc">
+    <h1>강서 클럽 상세 정보</h1>
+    <p>강서구는 다양한 분위기의 클럽이 모여 있어, 처음 방문하는 사람부터 오래된 단골까지 모두가 만족할 수 있는 선택지를 제공합니다. 이 페이지에서는 위치, 시설, 운영 시간, 특색 있는 프로그램 등을 구체적으로 살펴보며, 여러분의 목적에 최적화된 클럽을 찾는 데 필요한 모든 정보를 한눈에 정리했습니다.</p>
+    <p>각 클럽의 장점과 주의할 점을 명확히 구분해 안내하므로, 예약 전 반드시 확인해 보시길 권합니다. 특히, 주변 교통 편의성, 주차 가능 여부, 그리고 주변 인프라와의 연계성을 고려하면 보다 합리적인 선택을 할 수 있습니다.</p>
+  </section>
 
-        <section class="container">
-            <h2>📊 강서 클럽 한눈에 비교</h2>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>클럽</th>
-                            <th>입장료</th>
-                            <th>음료 가격</th>
-                            <th>혼잡도</th>
-                            <th>주차</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>클럽 A</td>
-                            <td>15,000~20,000원</td>
-                            <td>맥주 5,000원 / 칵테일 8,000원</td>
-                            <td>★★★★☆ (주말 빔)</td>
-                            <td>인근 유료 주차장</td>
-                        </tr>
-                        <tr>
-                            <td>클럽 B</td>
-                            <td>10,000~15,000원</td>
-                            <td>맥주 4,000원 / 칵테일 6,000원</td>
-                            <td>★★★☆☆ (조용한 편)</td>
-                            <td>주변 골목 주차 가능</td>
-                        </tr>
-                        <tr>
-                            <td>클럽 C</td>
-                            <td>25,000~35,000원</td>
+  <!-- 정보 섹션 1 -->
+  <section class="x-txt-rm3u">
+    <h2>1️⃣ 강서 클럽 기본 정보</h2>
+    <p>강서에 위치한 주요 클럽들은 대개 지하철 9호선과 5호선이 교차하는 지점에 가까워 접근성이 뛰어납니다. 예를 들어, 마포역 근처에 있는 ‘클럽 라이트’는 5호선 마포역 3번 출구에서 도보 3분 거리이며, 주변에 카페와 레스토랑이 많아 사전·사후 활동에 편리합니다.</p>
+    <p>대부분의 클럽은 평일 오후 6시부터 새벽 2시까지 운영하지만, 주말에는 오후 4시부터 개장해 더 넓은 시간대에 이용할 수 있습니다. 입장료는 일반적으로 10,000~20,000원 사이이며, VIP 패키지나 프리미엄 좌석을 선택하면 추가 요금이 발생합니다. 입장 전 신분증 확인과 마스크 착용이 필수이며, 일부 클럽은 ‘드레스코드’를 적용하고 있어 사전에 확인이 필요합니다.</p>
+
+    <h2>2️⃣ 클럽 선택 시 고려해야 할 체크리스트</h2>
+    <p>클럽을 선택하기 전에 먼저 본인의 목적을 정의하는 것이 중요합니다. 예를 들어, ‘친구와 가볍게 즐기고 싶다’면 분위기가 활기찬 메인 댄스 플로어가 있는 곳을, ‘전문 DJ의 세트를 듣고 싶다’면 음악에 초점을 맞춘 소규모 라운지형 클럽을 선택하는 것이 좋습니다.</p>
+    <p>또한, 인원 규모와 시점에 따라 적절한 클럽을 고르는 것이 필요합니다. 20명 이하 소규모 파티를 계획한다면 프라이빗 룸이 있는 클럽을, 50명 이상 대규모 모임은 대형 무대와 다수의 바가 있는 장소를 선택하세요. 이 외에도, 주차 가능 여부, 주변 음식점과 숙박 시설 유무, 그리고 사전 예약 정책을 체크하면 예기치 않은 불편을 방지할 수 있습니다.</p>
+
+    <h2>3️⃣ 상황별 추천 클럽</h2>
+    <p><strong>① 첫 방문, 가볍게 즐기고 싶을 때</strong> – ‘클럽 라이트’는 입구가 넓고, 초보자를 위한 친절한 스텝이 있어 처음 오는 사람들에게 적합합니다. 베이직한 EDM과 힙합 라인이 균형 있게 섞여 있어 다양한 음악 취향을 만족시킵니다.</p>
+    <p><strong>② DJ와 라이브 퍼포먼스를 중점으로</strong> – ‘베이스 펑크’는 최신 음향 설비와 유명 DJ 라인업을 자랑합니다. 주말마다 테마 파티가 열려 새로운 사운드를 경험할 수 있으며, 음향 관리가 뛰어나 음악 애호가에게 강력히 추천합니다.</p>
+    <p><strong>③ 분위기와 인테리어를 중시</strong> – ‘루미너스 라운지’는 은은한 조명과 모던한 인테리어가 돋보이며, 칵테일 바와 라운지 구역이 별도로 마련돼 대화와 휴식을 동시에 즐길 수 있습니다. 특히, 여성 고객을 위한 전용 라운지가 있어 안전하고 편안한 분위기를 제공합니다.</p>
+
+    <h2>4️⃣ 지역 시그널 & 주변 인프라</h2>
+    <p>강서구는 최근 대규모 재개발 프로젝트가 진행되어, 클럽 주변에 새로운 문화 시설과 쇼핑몰이 늘어나고 있습니다. 이로 인해 야간 유동 인구가 증가해 클럽 이용 시 더 활기찬 분위기를 느낄 수 있습니다. 또한, 다양한 대중교통 수단이 연결돼 있어 멀리서도 쉽게 접근할 수 있습니다.</p>
+    <p>주요 클럽 주변에는 24시간 운영되는 편의점, 음식점, 그리고 숙박 시설이 집중돼 있어 늦은 시간에도 필요한 서비스를 손쉽게 이용할 수 있습니다. 특히, 클럽 종료 후 안전하게 귀가할 수 있도록 택시 호출 스테이션이 마련돼 있는 경우가 많아, 안전을 최우선으로 생각하는 이용자에게 안심이 됩니다.</p>
+
+    <h2>5️⃣ FAQ</h2>
+    <p><strong>Q1. 클럽 입장 시 신분증은 꼭 필요하나요?</strong><br>
+    A1. 네, 대부분의 클럽은 만 19세 이상임을 확인하기 위해 신분증을 필수로 요구합니다. 여권, 운전면허증, 주민등록증 중 하나를 준비해 주세요.</p>
+    <p><strong>Q2. 사전 예약은 어떻게 해야 하나요?</strong><br>
+    A2. 각 클럽 홈페이지 또는 공식 카카오톡 채널을 통해 예약이 가능합니다. 특히 주말과 특별 이벤트 날은 사전 예약을 강력히 권장합니다.</p>
+    <p><strong>Q3. 드레스코드가 있는 경우 어떻게 확인하나요?</strong><br>
+    A3. 클럽 공식 SNS와 홈페이지에 드레스코드 안내가 게시됩니다. 일반적으로 ‘청바지와 스니커즈’는 허용되지 않으며, 깔끔한 셔츠와 정장 구두를 준비하는 것이 안전합니다.</p>
+    <p><strong>Q4. 주차는 어떻게 이용하나요?</strong><br>
+    A4. 일부 클럽은 전용 주차장을 보유하고 있으며, 근처 공영주차장을 이용할 경우 할인 쿠폰을 제공하기도 합니다. 주차 공간이 협소할 수 있으니, 가능한 대중교통 이용을 권장합니다.</p>
+    <p><strong>Q5. 클럽 내에서 음식·음료 구매는 어떻게 이뤄지나요?</strong><br>
+    A5. 대부분 바 카운터에서 음료를 직접 주문하며, 일부 클럽은 테이블 서비스와 셀프 바를 운영합니다. 가격대는 5,000원~30,000원 수준이며, 사전 메뉴 확인이 도움이 됩니다.</p>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="x-foot-e">
+    <p>&copy; 2026 강서 클럽 가이드. 모든 권리 보유.</p>
+    <nav class="q-side-9p5x">
+      <ul>
+        <li><a href="/privacy.html">개인정보 처리방침</a></li>
+        <li><a href="/terms.html">이용 약관</a></li>
+        <li><a href="/sitemap.html">사이트맵</a></li>
+      </ul>
+    </nav>
+  </footer>
+
 </body>
 </html>
